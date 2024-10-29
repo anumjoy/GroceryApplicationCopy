@@ -24,6 +24,15 @@ public class ExcelUtility {
 			Cell c=r.getCell(b);
 			return c.getStringCellValue();
 		}
+		//InValid Credentials
+		public static String getInvalidStringData(int a,int b) throws IOException {
+			f=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\Excel\\InvalidCredentials.xlsx"); 
+			wb=new XSSFWorkbook(f);
+			sh=wb.getSheet("Sheet1"); 
+			Row r=sh.getRow(a);
+			Cell c=r.getCell(b);
+			return c.getStringCellValue();
+		}
 		
 	//method2 -reading Numeric
 		public static int getNumericData(int a,int b) throws IOException {

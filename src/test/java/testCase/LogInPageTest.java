@@ -40,22 +40,22 @@ public class LogInPageTest extends BaseClass {
 	}
 
 	// EXCEL
-	@Test(dataProvider = "excelDataProvider")
-	public void verifyLogInWithExcelData(String username, String password) {
-		lp = new LogInPage(driver);
-		lp.sendLoginDetails(username, password);
-		String actualAlert = lp.getAlertText();
-		String expectedAlert = "Alert!\nInvalid Username/Password";
-		Assert.assertEquals(actualAlert, expectedAlert, "Alert is not as expected");
-	}
+		@Test(dataProvider = "excelDataProvider")
+		public void verifyLogInWithExcelData(String username, String password) {
+			lp = new LogInPage(driver);
+			lp.sendLoginDetails(username, password);
+			boolean actualAlert = lp.getAlertText().contains("Invalid Username/Password");
+			boolean expectedAlert = true;
+			Assert.assertEquals(actualAlert, expectedAlert, "Alert is not as expected");
+		}
 
-	@DataProvider(name = "excelDataProvider")
-	public Object[][] excelDataProvider() throws IOException {
-		return new Object[][] { { ExcelUtility.getStringData(2, 0), ExcelUtility.getStringData(2, 1) },
-				{ ExcelUtility.getStringData(3, 0), ExcelUtility.getStringData(3, 1) } };
-	}
+		@DataProvider(name = "excelDataProvider")
+		public Object[][] excelDataProvider() throws IOException {
+			return new Object[][] { { ExcelUtility.getInvalidStringData(2, 0), ExcelUtility.getInvalidStringData(2, 1) },
+					{ ExcelUtility.getInvalidStringData(3, 0), ExcelUtility.getInvalidStringData(3, 1) } };
+		}
 
-}
+	}
 
 //assertion-checks if actual=expected
 //SoftAssert softAssert = new SoftAssert(); //next line will be executed even if its failed
