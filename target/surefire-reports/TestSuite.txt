@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 3, Time elapsed: 20.021 s <<< FAILURE! - in TestSuite
+testCase.LogInPageTest.verifyLogInWithValidData  Time elapsed: 1.017 s  <<< FAILURE!
+java.lang.AssertionError: SignIn text not as expected expected [7rmart supermarket1] but found [7rmart supermarket]
+	at testCase.LogInPageTest.verifyLogInWithValidData(LogInPageTest.java:25)
+
