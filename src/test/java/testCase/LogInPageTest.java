@@ -21,7 +21,7 @@ public class LogInPageTest extends BaseClass {
 		lp = new LogInPage(driver);
 		hp = lp.sendLoginDetails("admin", "admin");
 		String actual = hp.gethomePageText(); // program readed value
-		String expected = "7rmart supermarket1"; // original value
+		String expected = "7rmart supermarket"; // original value
 		Assert.assertEquals(actual, expected, Constant.lp_verifyLogInWithValidData); // from Constant class, if assertion passed, this text will not be printed																						
 	}
 
