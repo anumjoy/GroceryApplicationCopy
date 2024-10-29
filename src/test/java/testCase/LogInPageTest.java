@@ -40,7 +40,7 @@ public class LogInPageTest extends BaseClass {
 	}
 
 	// EXCEL
-	@Test(dataProvider = "excelDataProvider", enabled = false)
+	@Test(dataProvider = "excelDataProvider")
 	public void verifyLogInWithExcelData(String username, String password) {
 		lp = new LogInPage(driver);
 		lp.sendLoginDetails(username, password);
